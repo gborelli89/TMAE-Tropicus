@@ -69,10 +69,9 @@ Vemos que a expressão final obtida, v₂(t) = t, é diferente da que começamos
 """
 
 # ╔═╡ 91258d82-fd9a-4106-83f2-18b789050105
-
-
-# ╔═╡ a8ffd6d5-9644-4d33-80f7-ee7c7001244d
-
+md"""
+Ao integrarmos não conseguimos recuperar algumas informações (informaçõa contida no espaço nulo, se traçarmos um paralelo com álgebra linear). Na realidade, o que encontramos é uma família de funções. A função específica apenas será determinada a partir das condições de contorno.
+"""
 
 # ╔═╡ f31f9113-8ffd-4d59-9316-dec963bbef30
 md"""
@@ -99,7 +98,7 @@ begin
 	# Condições iniciais:
 	u₀ = [499.0, 1.0, 0.0]
 	tspan = [0.0,360.0]
-	p = [0.3/500, 0.17]
+	p = [0.35/500, 0.17]
 
 	# Definindo o problema
 	prob = ODEProblem(sir!, u₀, tspan, p)
@@ -1591,8 +1590,7 @@ version = "0.9.1+5"
 # ╠═bbb12697-b21d-4a2f-8455-60b5bcb78edb
 # ╟─13a4129a-5e49-467d-8314-f46377eec0a6
 # ╟─27fb501d-1122-48f2-8345-ca138629c090
-# ╠═91258d82-fd9a-4106-83f2-18b789050105
-# ╠═a8ffd6d5-9644-4d33-80f7-ee7c7001244d
+# ╟─91258d82-fd9a-4106-83f2-18b789050105
 # ╟─f31f9113-8ffd-4d59-9316-dec963bbef30
 # ╠═19c16251-2849-4d8e-87da-28ce3c2c3bc6
 # ╠═192780cc-748d-40a3-8248-399906a88eee
