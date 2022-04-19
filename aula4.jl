@@ -44,7 +44,7 @@ end
 medidas = simdisp(1000,0.001) # x em metros
 
 # ╔═╡ 0caa3fa2-e614-4529-8fda-00bcb1c64037
-# Plotando dados experimentais
+# Plotando dados experimentais (fictícios)
 begin
 	scatter(medidas, 5:5:50, label=false)
 	xlabel!("x(m)")
@@ -54,13 +54,17 @@ end
 # ╔═╡ 9a8195eb-39c9-49e5-a167-34085fd00113
 md"""
 **Resolvendo pela projeção**
+
+$$A^T A c = A^T f$$
+
+em que $A$ é a matriz que contém os deslocamentos medidos, $c$ é o vetor dos coeficientes (o que queremos encontrar) e $f$ o vetor das forças medidas.
 """
 
 # ╔═╡ e5bb6796-fae4-41a1-a6a9-fc2f532da923
-A = [fill(1,length(medidas)) medidas]
+A = [fill(1,length(medidas)) medidas] # Matrix A
 
 # ╔═╡ 5df32d4b-820b-48fa-9a04-0dabcc9c3acd
-b = collect(5:5:50)
+b = collect(5:5:50) # Dados de força medidos
 
 # ╔═╡ 9ae5b030-b71f-4747-9d94-3f42d484e70a
 # Regressão
