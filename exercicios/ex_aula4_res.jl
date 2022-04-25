@@ -81,7 +81,7 @@ end
 md"""
 #### Exercício 2
 
-O segundo exercício trata do ajuste de curva para a região da camada limite atmosférica (no caso modelada em um túnel de vento) em que é váçida a lei logarítmica indicada abaixo.
+O segundo exercício trata do ajuste de curva para a região da camada limite atmosférica (no caso modelada em um túnel de vento) em que é válida a lei logarítmica indicada abaixo.
 
 $U(z) = \frac{u^*}{\kappa} ln \left(\frac{z}{z_0}\right)$
 
@@ -113,9 +113,9 @@ scatter(d2[:,2], lnz, markersize=5, xlabel="U", ylabel="ln(z)", label="")
 
 # ╔═╡ 6a40f53c-1692-4087-a5a6-727935e171cd
 md"""
-É possível notar que os primeiros pontos experimentais não obedecem a lei log a partir do 12º ponto, aproximadamente, podemos ver que a relação se aprocima a uma reta, como experado, indicando que a partir desse ponto devemos ter um ajuste bom pelo modelo log.
+É possível notar que os primeiros pontos experimentais não obedecem a lei log. A partir do 12º ponto, aproximadamente, podemos ver que a relação se aproxima a uma reta, como experado, indicando que a partir desse ponto devemos ter um ajuste bom pelo modelo log.
 
-Vamos então considerar a partir do 12º ponto experimental
+Vamos então considerar a partir do 12º ponto experimental.
 """
 
 # ╔═╡ f8a2e3c2-c599-464a-97be-fdcba93ffbcd
@@ -132,9 +132,9 @@ Para resolver este problema vamos utilizar o pacote LsqFit.jl. O mesmo procedime
 # ╔═╡ 05bc8e63-d137-4078-ac22-bf78d67ff00b
 # Criando modelo
 begin
-	model(z,p) = p[1]*z .+ p[2]
-	p0 = [2.0, 10.0]
-	fit = curve_fit(model, x, U, p0)
+	model(z,p) = p[1]*z .+ p[2] # modelo
+	p0 = [2.0, 10.0] # parâmetros iniciais (chute)
+	fit = curve_fit(model, x, U, p0) # ajuste
 end
 
 # ╔═╡ 773095eb-599f-4144-a66b-69fa886705e4
@@ -175,6 +175,11 @@ begin
 	scatter(d2[:,2], d2[:,1] ./1000, markersize=5, xlabel="U(m/s)", ylabel="z(mm)", label="")
 	plot!(cl.(0.03:0.01:0.6), 0.03:0.01:0.6, linewidth=2, label="")
 end
+
+# ╔═╡ 1963fa44-46dd-4982-8c0c-4e8cb0147dfc
+md"""
+Apenas como exemplo, se o modelo ensaiado estiver na escala 1:200, o $z_0$ na escala real vale aproximadamente 1,0 m (0,005 x 200), o que corresponde à categoria de terrena IV de acordo com a norma brasileira NBR 6123.
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1223,5 +1228,6 @@ version = "0.9.1+5"
 # ╟─408c3089-4919-452c-a14e-f3889da8f5a7
 # ╠═dfaae365-ba0d-4602-a81c-81011d2bf312
 # ╠═32aef136-faf3-460f-acd5-7abef8e2bee5
+# ╟─1963fa44-46dd-4982-8c0c-4e8cb0147dfc
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
