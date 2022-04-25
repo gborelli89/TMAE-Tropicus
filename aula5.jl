@@ -52,7 +52,7 @@ Multiplicando os dois lados da equação $Ax = λx$, temos:
 
 $A^2x = λ^2x$
 
-Para múltiplos altovalores e autovetores:
+Para múltiplos autovalores e autovetores:
 
 $A^2 = SΛ(S^{-1}S)ΛS^{-1} = SΛ^2S^{-1}$
 
