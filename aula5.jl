@@ -172,7 +172,13 @@ $u(t) = -\frac{1}{3} e^{-3t}\begin{bmatrix} -1 \\ 1 \end{bmatrix} + \frac{1}{3}\
 
 **Pergunta: Qual o equilíbrio do sistema (no regime permanente)?**
 
+No regime permanente o sistema atinge o equilíbrio
+
+$u = \begin{bmatrix} 2/3 \\ 1/3 \end{bmatrix}$
+
 **Pense em como a estabilidade está relacionada à parte real dos autovalores $λ_i$**
+
+A estabilidade está relacionada à parte real dos autovalores $λ_i$. Para que haja estabilidade as partes reais de todos os autovalores devem ser menores ou iguais a zero.
 
 """
 
