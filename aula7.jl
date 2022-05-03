@@ -20,19 +20,19 @@ $f(x+h) = f(x) + hf'(x) + \frac{h^2f''(x)}{2!} + \frac{h^3f'''(x)}{3!} + \mathca
 
 **Forward Euler**
 
-$f'(x) \approx \frac{f(x+h) - f(x)}{h} =\mathcal{O}(h)$
+$f'(x) \approx \frac{f(x+h) - f(x)}{h} +\mathcal{O}(h)$
 
 **Backward Euler**
 
-$f'(x) \approx \frac{f(x) - f(x-h)}{h} =\mathcal{O}(h)$
+$f'(x) \approx \frac{f(x) - f(x-h)}{h} +\mathcal{O}(h)$
 
 **Diferença centrada**
 
-$f'(x) \approx \frac{f(x+h) - f(x-h)}{2h} =\mathcal{O}(h^2)$
+$f'(x) \approx \frac{f(x+h) - f(x-h)}{2h} +\mathcal{O}(h^2)$
 
 **Expressão para a derivada segunda**
 
-$f''(x) \approx \frac{f(x+h)-2f(x)+f(x-h)}{h^2} = \mathcal{O}(h^2)$
+$f''(x) \approx \frac{f(x+h)-2f(x)+f(x-h)}{h^2} + \mathcal{O}(h^2)$
 """
 
 # ╔═╡ 43e40bf2-cd07-42ed-9189-1beb50f51018
