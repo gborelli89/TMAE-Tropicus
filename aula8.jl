@@ -118,9 +118,6 @@ $\begin{bmatrix}
    \end{bmatrix}$
 """
 
-# ╔═╡ 94b204e0-394b-4898-a57b-a5f1cd37cb05
-
-
 # ╔═╡ 47a9ddb6-26ed-433d-9fc2-730064195aa2
 function sim(u, Δt, Δx; steps, α=7.5e-7)
 	Fo = fo(α, Δt, Δx)
@@ -147,7 +144,7 @@ $(@bind step Slider(0:300))
 
 # ╔═╡ 0e9db19c-abc3-47d0-81e7-c49e4384b749
 begin
-	Δt = 50.0
+	Δt = 40.0
 	uinit = copy(u₀)
 	if step==0
 		u = u₀
@@ -166,7 +163,7 @@ end
 md"""
 ## Estabilidade da solução numérica
 
-Varie o número de Fourier no gráfico acima e veja o efeito na solução
+Varie o número de Fourier no gráfico acima e veja o efeito na solução. Para isso é necessário rodar em Julia!
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -490,6 +487,12 @@ git-tree-sha1 = "f6250b16881adf048549549fba48b1161acdac8c"
 uuid = "c1c5ebd0-6772-5130-a774-d5fcae4a789d"
 version = "3.100.1+0"
 
+[[deps.LERC_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
+git-tree-sha1 = "bf36f528eec6634efc60d7ec062008f171071434"
+uuid = "88015f11-f218-50d7-93a8-a6af411a945d"
+version = "3.0.0+1"
+
 [[deps.LZO_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
 git-tree-sha1 = "e5b909bcf985c5e2605737d2ce278ed791b89be6"
@@ -563,10 +566,10 @@ uuid = "4b2f31a3-9ecc-558c-b454-b3730dcb73e9"
 version = "2.35.0+0"
 
 [[deps.Libtiff_jll]]
-deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Pkg", "Zlib_jll", "Zstd_jll"]
-git-tree-sha1 = "340e257aada13f95f98ee352d316c3bed37c8ab9"
+deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "LERC_jll", "Libdl", "Pkg", "Zlib_jll", "Zstd_jll"]
+git-tree-sha1 = "c9551dd26e31ab17b86cbd00c2ede019c08758eb"
 uuid = "89763e89-9b03-5906-acba-b20f662cd828"
-version = "4.3.0+0"
+version = "4.3.0+1"
 
 [[deps.Libuuid_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -717,9 +720,9 @@ uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 
 [[deps.Qt5Base_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Fontconfig_jll", "Glib_jll", "JLLWrappers", "Libdl", "Libglvnd_jll", "OpenSSL_jll", "Pkg", "Xorg_libXext_jll", "Xorg_libxcb_jll", "Xorg_xcb_util_image_jll", "Xorg_xcb_util_keysyms_jll", "Xorg_xcb_util_renderutil_jll", "Xorg_xcb_util_wm_jll", "Zlib_jll", "xkbcommon_jll"]
-git-tree-sha1 = "ad368663a5e20dbb8d6dc2fddeefe4dae0781ae8"
+git-tree-sha1 = "c6c0f690d0cc7caddb74cef7aa847b824a16b256"
 uuid = "ea2cea3b-5b76-57ae-a6ef-0a8af62496e1"
-version = "5.15.3+0"
+version = "5.15.3+1"
 
 [[deps.REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
@@ -1091,8 +1094,7 @@ version = "0.9.1+5"
 # ╠═34af1124-f9dd-46ac-979e-651b9e6f0fcf
 # ╟─c1086bda-880a-4522-be9d-cc0545292590
 # ╠═7f313ec9-4640-47d7-a4d8-1ada258b2d08
-# ╠═e009dd88-b810-4bca-bf08-c457624ac6d3
-# ╠═94b204e0-394b-4898-a57b-a5f1cd37cb05
+# ╟─e009dd88-b810-4bca-bf08-c457624ac6d3
 # ╠═47a9ddb6-26ed-433d-9fc2-730064195aa2
 # ╟─77eb3dcb-a991-4fcf-af32-5556f109bfbc
 # ╠═0e9db19c-abc3-47d0-81e7-c49e4384b749
